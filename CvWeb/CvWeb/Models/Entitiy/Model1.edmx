@@ -1,0 +1,274 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DbWebPageModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="about_tb">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Surname" Type="varchar" MaxLength="50" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
+          <Property Name="about" Type="varchar(max)" />
+          <Property Name="telephone" Type="varchar" MaxLength="50" />
+          <Property Name="adress" Type="varchar" MaxLength="100" />
+          <Property Name="picture" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="contact_tb">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nameSurname" Type="varchar" MaxLength="100" />
+          <Property Name="email" Type="varchar" MaxLength="50" />
+          <Property Name="topic" Type="varchar" MaxLength="50" />
+          <Property Name="message" Type="varchar" MaxLength="1000" />
+          <Property Name="date" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="education_tb">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Header" Type="varchar" MaxLength="50" />
+          <Property Name="lowerHeader1" Type="varchar" MaxLength="50" />
+          <Property Name="lowerHeader2" Type="varchar" MaxLength="50" />
+          <Property Name="gno" Type="varchar" MaxLength="50" />
+          <Property Name="date" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="experience_tb">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="header" Type="varchar" MaxLength="50" />
+          <Property Name="lowerHeader" Type="varchar" MaxLength="50" />
+          <Property Name="experience" Type="varchar(max)" />
+          <Property Name="date" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="hobies_tb">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Hobies" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="login_tb">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="userName" Type="varchar" MaxLength="20" />
+          <Property Name="password" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'DbWebPage.dbo.sertificates_tb' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="sertificates_tb">
+          <Property Name="ID" Type="int" />
+          <Property Name="sertificates" Type="varchar(max)" />
+        </EntityType>-->
+        <EntityType Name="Skill_tb">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Skills" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="DbWebPageModelStoreContainer">
+          <EntitySet Name="about_tb" EntityType="Self.about_tb" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="contact_tb" EntityType="Self.contact_tb" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="education_tb" EntityType="Self.education_tb" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="experience_tb" EntityType="Self.experience_tb" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="hobies_tb" EntityType="Self.hobies_tb" Schema="dbo" Table="hobies.tb" store:Type="Tables" />
+          <EntitySet Name="login_tb" EntityType="Self.login_tb" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Skill_tb" EntityType="Self.Skill_tb" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DbWebPageModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="about_tb">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="about" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="telephone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="adress" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="picture" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="contact_tb">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nameSurname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="topic" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="message" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="date" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="education_tb">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Header" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="lowerHeader1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="lowerHeader2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="gno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="date" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="experience_tb">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="header" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="lowerHeader" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="experience" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="date" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="hobies_tb">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Hobies" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="login_tb">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="userName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="password" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Skill_tb">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Skills" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="DbWebPageEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="about_tb" EntityType="Self.about_tb" />
+          <EntitySet Name="contact_tb" EntityType="Self.contact_tb" />
+          <EntitySet Name="education_tb" EntityType="Self.education_tb" />
+          <EntitySet Name="experience_tb" EntityType="Self.experience_tb" />
+          <EntitySet Name="hobies_tb" EntityType="Self.hobies_tb" />
+          <EntitySet Name="login_tb" EntityType="Self.login_tb" />
+          <EntitySet Name="Skill_tb" EntityType="Self.Skill_tb" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DbWebPageModelStoreContainer" CdmEntityContainer="DbWebPageEntities1">
+          <EntitySetMapping Name="about_tb">
+            <EntityTypeMapping TypeName="DbWebPageModel.about_tb">
+              <MappingFragment StoreEntitySet="about_tb">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="about" ColumnName="about" />
+                <ScalarProperty Name="telephone" ColumnName="telephone" />
+                <ScalarProperty Name="adress" ColumnName="adress" />
+                <ScalarProperty Name="picture" ColumnName="picture" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="contact_tb">
+            <EntityTypeMapping TypeName="DbWebPageModel.contact_tb">
+              <MappingFragment StoreEntitySet="contact_tb">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="nameSurname" ColumnName="nameSurname" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="topic" ColumnName="topic" />
+                <ScalarProperty Name="message" ColumnName="message" />
+                <ScalarProperty Name="date" ColumnName="date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="education_tb">
+            <EntityTypeMapping TypeName="DbWebPageModel.education_tb">
+              <MappingFragment StoreEntitySet="education_tb">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Header" ColumnName="Header" />
+                <ScalarProperty Name="lowerHeader1" ColumnName="lowerHeader1" />
+                <ScalarProperty Name="lowerHeader2" ColumnName="lowerHeader2" />
+                <ScalarProperty Name="gno" ColumnName="gno" />
+                <ScalarProperty Name="date" ColumnName="date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="experience_tb">
+            <EntityTypeMapping TypeName="DbWebPageModel.experience_tb">
+              <MappingFragment StoreEntitySet="experience_tb">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="header" ColumnName="header" />
+                <ScalarProperty Name="lowerHeader" ColumnName="lowerHeader" />
+                <ScalarProperty Name="experience" ColumnName="experience" />
+                <ScalarProperty Name="date" ColumnName="date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="hobies_tb">
+            <EntityTypeMapping TypeName="DbWebPageModel.hobies_tb">
+              <MappingFragment StoreEntitySet="hobies_tb">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Hobies" ColumnName="Hobies" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="login_tb">
+            <EntityTypeMapping TypeName="DbWebPageModel.login_tb">
+              <MappingFragment StoreEntitySet="login_tb">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="userName" ColumnName="userName" />
+                <ScalarProperty Name="password" ColumnName="password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Skill_tb">
+            <EntityTypeMapping TypeName="DbWebPageModel.Skill_tb">
+              <MappingFragment StoreEntitySet="Skill_tb">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Skills" ColumnName="Skills" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
